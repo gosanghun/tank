@@ -15,6 +15,7 @@ public class follow : MonoBehaviour
     void Update()
     {
         tr.position = new Vector3(target.position.x - 0.52f, target.position.y + 5, target.position.z - 10f);
+     
         tr.LookAt(target);
     }
 }
