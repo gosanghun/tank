@@ -9,7 +9,8 @@ public class Tank : MonoBehaviour
     public float speed_r = 10f;
     public Transform fire_pos;
     public GameObject cannonballflying;
-
+    public Animation cannon_ani;
+    public AudioSource wow;
     public Transform cannon;
     public Transform tower;
     //public Transform ball;
@@ -59,10 +60,15 @@ public class Tank : MonoBehaviour
 
             Debug.Log(cannon.transform.localEulerAngles.x);
 
-       if (Input.GetKeyDown(KeyCode.Space)) 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            cannon_ani.GetComponent<Animation>().Play("cannon Animation");
+            wow.GetComponent<AudioSource>().Play();
             Instantiate(cannonballflying, fire_pos.position, fire_pos.rotation); 
+        }
 
-      
+
+
   
 
     }
